@@ -1,0 +1,8 @@
+help: |
+    👋 Hi, <b>${name}</b>! I'm the bot to contact with <a href='https://t.me/sayobio'>Sayolight</a>.
+
+    Detail a problem, suggestion, or question, and send it here.
+ban_user: The user is banned.
+ban_user_already: The user is already banned.
+pardon_user: The user is unbanned.
+pardon_user_already: The user in already unbanned.
