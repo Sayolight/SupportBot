@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "bot": "node index.js"
   },
   "keywords": [],
   "author": "",
@@ -12,6 +12,8 @@
   "dependencies": {
     "better-sqlite3": "^7.6.2",
     "dotenv": "^16.0.1",
+    "sequelize": "^6.23.0",
+    "sqlite3": "^5.1.1",
     "telegraf": "^3.7.1",
     "telegraf-i18n": "^6.6.0"
   }

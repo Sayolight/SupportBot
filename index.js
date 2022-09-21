@@ -12,10 +12,12 @@ const i18n = new TelegrafI18n({
 	defaultLanguage: 'en'
 })
 
+bot.context.db = require('./database');
+
 bot.use(i18n.middleware())
-bot.use((ctx, next) => {
-	next().catch((error) => {
-		console.log('Oops', error)
+bot.use(async (ctx, next) => {
+	next().catch(async (error) => {
+		await ctx.replyWithHTML(`Ошибка!\n\n<pre>${error}</pre>`)
 	})
 	return true
 })

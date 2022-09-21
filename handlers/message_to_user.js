@@ -1,12 +1,8 @@
-const db = require('../database')
-const { Extra } = require('telegraf')
-
 module.exports = async ctx => {
 
-	const original = await db.Messages.get
+	const original = await ctx.db.Messages.findOne
 	(
-		db.Database,
-		ctx.message.reply_to_message.message_id
+		{where: {support_id: ctx.message.reply_to_message.message_id}}
 	)
 
 

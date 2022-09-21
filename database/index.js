@@ -1,10 +1,16 @@
-const db = require('better-sqlite3')('sayo_support.sqlite');
+const Sequelize = require('sequelize');
 
-const schemaList = require('./schema')
-const functionList = require('./functions')
+const sequelize = new Sequelize({
+	host: 'localhost',
+	dialect: 'sqlite',
+	logging: false,
+	storage: 'sayo_support.sqlite',
+});
 
-for (const schema in schemaList) {
-	schemaList[schema](db)
+module.exports = {
+	Blacklist: require('./models/Blacklist')(sequelize),
+	Messages: require('./models/Messages')(sequelize),
 }
 
-module.exports = Object.assign({Database: db}, functionList)
+module.exports.Blacklist.sync();
+module.exports.Messages.sync();
