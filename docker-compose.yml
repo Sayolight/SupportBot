@@ -1,0 +1,29 @@
+version: "3"
+services:
+  app:
+    image: node:lts-alpine
+    command: sh -c "npm i && npm run bot"
+    volumes:
+      - ./:/app
+    working_dir: /app
+    environment:
+      BOT_TOKEN: BOT_TOKEN
+      SUPPORT_CHAT_ID: 123456789
+      LOGGING_LEVEL: info
+
+      DB_HOST: DB_HOST
+      DB_NAME: SUPPORTBOT
+      DB_USERNAME: USERNAME
+      DB_PASSWORD: PASSWORD
+  mysql:
+    image: mysql:5.7
+    volumes:
+      - mysql:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: USERNAME
+      MYSQL_DATABASE: PASSWORD
+    ports:
+      - "3306:3306"
+
+volumes:
+  mysql:

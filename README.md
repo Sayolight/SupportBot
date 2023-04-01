@@ -3,7 +3,7 @@ A simple tg bot for support.
 
 Commands:\
 <code>ban</code> - add user to blacklist\
-<code>pardon</code> - remove user from blacklist\
+<code>pardon</code> - remove user from blacklist
 
 Env:\
 <code>BOT_TOKEN \
