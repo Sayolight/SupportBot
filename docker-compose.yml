@@ -11,9 +11,9 @@ services:
       SUPPORT_CHAT_ID: ${SUPPORT_CHAT_ID}
       LOGGING_LEVEL: ${LOGGING_LEVEL}
 
-      DB_HOST: mysql
-      DB_NAME: supportbot
-      DB_USERNAME: root
+      DB_HOST: ${MYSQL_DB_HOST}
+      DB_NAME: ${MYSQL_DB_NAME}
+      DB_USERNAME: ${MYSQL_DB_USERNAME}
       DB_PASSWORD: ${MYSQL_ROOT_PASSWORD}
   mysql:
     image: mysql:5.7
