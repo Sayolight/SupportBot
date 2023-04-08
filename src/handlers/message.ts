@@ -18,7 +18,22 @@ messageToSupport.on(["message"], async (ctx: MyContext) => {
     process.env.SUPPORT_CHAT_ID!,
     ctx.chat!.id,
     ctx.message!.message_id,
-    { reply_markup: actionsMenu }
+    {
+      reply_markup: {
+        inline_keyboard: [
+          [
+            {
+              text: `${ctx.message?.from.first_name} ${
+                ctx.message?.from.last_name ?? ""
+              }`,
+              url: ctx.message?.from.username
+                ? `https://t.me/${ctx.message?.from.username}`
+                : "https://t.me/artsayo",
+            },
+          ],
+        ],
+      },
+    }
   );
 
   await ctx.db.Messages.create({
