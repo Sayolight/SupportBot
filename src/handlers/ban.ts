@@ -12,7 +12,7 @@ async function findUser(ctx: MyContext) {
       where: { support_id: ctx.message?.reply_to_message.message_id },
     });
     if (!message) {
-      await ctx.reply(ctx.t("ban.not_found"));
+      await ctx.reply(ctx.t("error.not_found"));
     }
 
     return message;

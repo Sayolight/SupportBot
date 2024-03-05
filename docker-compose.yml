@@ -11,17 +11,21 @@ services:
       SUPPORT_CHAT_ID: ${SUPPORT_CHAT_ID}
       LOGGING_LEVEL: ${LOGGING_LEVEL}
 
-      DB_HOST: ${MYSQL_DB_HOST}
-      DB_NAME: ${MYSQL_DB_NAME}
-      DB_USERNAME: ${MYSQL_DB_USERNAME}
-      DB_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      DB_HOST: ${MYSQL_HOST}
+      DB_NAME: ${MYSQL_DATABASE}
+      DB_USERNAME: ${MYSQL_USERNAME}
+      DB_PASSWORD: ${MYSQL_PASSWORD}
+    depends_on:
+      - mysql
   mysql:
     image: mysql:5.7
     volumes:
       - mysql:/var/lib/mysql
     environment:
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
-      MYSQL_DATABASE: supportbot
+      MYSQL_USER: ${MYSQL_USERNAME}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
     ports:
       - "3306:3306"
 

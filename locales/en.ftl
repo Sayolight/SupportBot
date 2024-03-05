@@ -15,11 +15,12 @@ help=
     .group= 🔗 This is the place to receive messages from users. Just reply to them using a reply.
 ban=
     .no_reply= ⚠ To issue a ban to a user, you need to reply to their message.
-    .not_found= 😢 Sorry, but I was unable to find this message.
     .done= 🔨 The user has been blocked.
     .pardon= 😇 The user has been unblocked.
 error=
     .unknown= 😨 Oops! An unknown error occurred.
+    .blocked= 😨 User blocked the bot, so I was unable to send a message.
+    .not_found= 😢 Sorry, but I was unable to find this message.
 user=
     .info=
         🔍 Information about user <b>{ $userFullName }</b>
